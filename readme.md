@@ -1,48 +1,55 @@
-# Criando pasta e organizando estrutura do projeto
+# Clonando o projeto do gitHub , criar configuração da API e testar
 ```
-Primeiro Passo
+Primeiros passos - Clonar pasta
 ```
-* Abrir o GitBash
+* git clone URL_REPOSITORIO
 ```
-Segundo Passo
+Acessar pasta
 ```
-* Iniciar códigos no GitBash
+* cd NOME_REPOSITORIO
 ```
-Passos no GitBash
+Reinstalar pacote de aplicação
 ```
-* mkdir projetoBackend
-* cd projetoBackend
-* touch readme.md
+* npm i
 ```
-Iniciar gerenciamneto de pacotes Node
+Próximos passos - Atualize o projeto
 ```
-* npm init -y
-```
-Instalar pacotes 
-``` 
-* npm i express nodemon dotenv
-``` 
-Abrir no VSCode
-``` 
-* code .
-``` 
-Manipular Arquivos 
-``` 
+* nano .env
+* PORT = 3008
 * nano .gitignore
-* node_modules
-* mkdir src
-* touch src/app.js
-* touch src/server.js
-* mkdir src/config
-* mkdir src/controllers
-* mkdir src/routes
-``` 
-Iniciar o gerenciador de arquivos .git
-``` 
-* git init
-```  
-Último passo
-``` 
-* Enviar arquivo para o GitHub
-
-TESTE de ATUALIAÇÂO
+* .env
+```
+Abrir no VSCode
+```
+* code .
+```
+Construir no VSCode
+```
+* nano .env.example
+* PORT = 
+* const express = require('express');
+* const dotenv = require('dotenv').config();
+* const app = express();
+* app.set('port', process.env.PORT || 3333);
+* module.exports = app;
+* const app = require('./app');
+* const port = app.get('port');
+* app.listen(port, () => {
+    console.log(`Running on port ${ port }!`);
+});
+* "start":"nodemon src/server.js"
+```
+Rodar comandos no Gitbash
+```
+* npm run start
+* git add .
+* git commit -m 'configuração do projeto'
+```
+Enviar para o GitBash
+```
+* git push
+* cd ..
+* rm -rf projetoBackend
+```
+Conclusão do passo 2
+```
