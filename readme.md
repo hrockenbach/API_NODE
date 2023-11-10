@@ -1,4 +1,4 @@
-# Clonando o projeto do gitHub , criar configuração da API e testar
+#  Testar rotas da API com insomnia
 ```
 Primeiros passos - Clonar pasta
 ```
@@ -12,44 +12,16 @@ Reinstalar pacote de aplicação
 ```
 * npm i
 ```
-Próximos passos - Atualize o projeto
+Próximos passos - Acessar Insomnia
 ```
-* nano .env
-* PORT = 3008
-* nano .gitignore
-* .env
-```
-Abrir no VSCode
-```
-* code .
-```
-Construir no VSCode
-```
-* nano .env.example
-* PORT = 
-* const express = require('express');
-* const dotenv = require('dotenv').config();
-* const app = express();
-* app.set('port', process.env.PORT || 3333);
-* module.exports = app;
-* const app = require('./app');
-* const port = app.get('port');
-* app.listen(port, () => {
-    console.log(`Running on port ${ port }!`);
-});
-* "start":"nodemon src/server.js"
-```
-Rodar comandos no Gitbash
-```
-* npm run start
-* git add .
-* git commit -m 'configuração do projeto'
-```
-Enviar para o GitBash
-```
-* git push
-* cd ..
-* rm -rf projetoBackend
-```
-Conclusão do passo 2
-```
+* Criar novo projeto
+* Criar HTTP Request 
+* Alterar tipo de HTTP (GET, PUT,POST, DELETE)
+* Colocar URL da API de acordo com os "rotas.js"
+* Antes de clicar "send" escrever no GitBash "npm start"
+
+
+<img src="./imagens/print in.png">
+<img src="./imagens/print in2.png">
+<img src="./imagens/print in3.png">
+<img src="./imagens/print in4.png">
