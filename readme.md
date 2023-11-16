@@ -12,16 +12,59 @@ Reinstalar pacote de aplicação
 ```
 * npm i
 ```
-Próximos passos - Acessar Insomnia
+Próximos passos - Atuaizar no VSCode através do GitBash
 ```
-* Criar novo projeto
-* Criar HTTP Request 
-* Alterar tipo de HTTP (GET, PUT,POST, DELETE)
-* Colocar URL da API de acordo com os "rotas.js"
-* Antes de clicar "send" escrever no GitBash "npm start"
+* mkdir src/controllers
+* touch src/controllers/crudController.js
+* function listarDados(request, response) {
+    response.send('Retorno de lista de informação do Banco de dados');
+}
+
+function gravarDados(request, response) {
+    response.send('Método utilizado para salvar informações!');
+}
+
+function atualizarDados(request, response) {
+    response.send('Método utilizado para editar informações!');
+}
+
+function deletarDados(request, response) {
+    response.send('Método utilizado para deletar informações!');
+}
+
+module.exports = {
+    listarDados,
+    gravarDados, 
+    atualizarDados, 
+    deletarDados
+}
+* // Importar pacote do express
+const { Router } = require('express');
+// Instanciar o Router na variavel router
+const router = Router();
+// Importar funções do controller para a rota acessar as funções
+const { 
+    listarDados,
+    gravarDados,
+    atualizarDados,
+    deletarDados
+ } = require('../controllers/crudController');
+
+router.get('/listar', listarDados);
+
+router.post('/gravar', gravarDados);
+
+router.put('/atualizar/:id', atualizarDados);
+
+router.delete('/deletar/:id', deletarDados);
+
+module.exports = router;
+```
+# Testar requisições no Insomnia
+```
 
 
-<img src="./imagens/print in.png">
-<img src="./imagens/print in2.png">
-<img src="./imagens/print in3.png">
-<img src="./imagens/print in4.png">
+<img src="./imagens/print re.png">
+<img src="./imagens/print re2.png">
+<img src="./imagens/print re3.png">
+<img src="./imagens/print re4.png">
